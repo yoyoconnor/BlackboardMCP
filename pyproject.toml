@@ -1,0 +1,22 @@
+[project]
+name = "blackboard-mcp"
+version = "0.1.0"
+description = "Read-only MCP server for Blackboard Learn: courses, class times, assignments, grades, and slide decks for studying"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.2",
+  "httpx>=0.27",
+  "python-pptx>=0.6.23",
+  "pypdf>=4.0",
+  "python-docx>=1.1",
+]
+
+[project.scripts]
+blackboard-mcp = "blackboard_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blackboard_mcp"]
